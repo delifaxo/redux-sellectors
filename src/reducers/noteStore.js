@@ -12,6 +12,8 @@ export default function noteStore(state = initialState, action) {
             return Object.assign({}, state, { note: state.note.concat(action.payload) });
         case "clear_text":
             return Object.assign({}, state, { note: [] });
+        case "update_filter":
+            return Object.assign({}, state, { note: (action.payload) });
         default:
             return state
     }

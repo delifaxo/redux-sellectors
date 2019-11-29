@@ -1,12 +1,12 @@
 import { createSelector } from "reselect";
 
-const getVisibilityFilter = state => state.noteStore.note;
-const getTodos = state => state.noteStore.array;
+const getArrayFilters = state => state.noteStore.note;
+const getNoteArray = state => state.noteStore.array;
 
-export const makeGetVisibleTodos = () => { return createSelector(
-    [getVisibilityFilter, getTodos],
-    (visibilityFilter, todos) => {
-        var array = todos.filter(data => !visibilityFilter.some(el => data.car.includes(el)));
+export const newFilteredArrayNote = () => { return createSelector(
+    [getArrayFilters, getNoteArray],
+    (arrayFilters, arrayNote) => {
+        var array = arrayNote.filter(data => !arrayFilters.some(el => data.car.includes(el)));
         return array;
     }
 )}

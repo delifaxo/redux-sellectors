@@ -9,3 +9,9 @@ export function clearTextNote() {
       type: "clear_text",
     };
   }
+export function actionUpdateNote(data) {
+  return {
+    type: "update_filter",
+    payload: data
+  }
+}
